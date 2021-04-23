@@ -116,8 +116,178 @@
     background: none;
 }
 
+/* common styling for all sections*/
+section{
+    padding: 100px 0;
+    font-family: 'Roboto', sans-serif;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+section .title:hover::before{
+    opacity: 1;
+}
+section .title::before{
+    content:"";
+    position: absolute;
+    width:200px;
+    height:3px;
+    background: black;
+    bottom: 0px;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: all 1s ease-in-out;
+}
+section .title:hover::after{
+    opacity: 1;
+}
+section .title::after{
+    position: absolute;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0 5px;
+    bottom: -8px;
+    color: var(--themeColor1);
+    background: white;
+    left: 50%;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: all 0.3s ease-in-out;
+}
+
+/* about section styling */
+.about .title::after{
+    content:"who i am";
+}
+.about .about-content,
+.services .serv-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.about .about-content .left{
+    width: 45%
+}
+.about .about-content .left img{
+    height:400px;
+    width:400px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+.about .about-content .right{
+    width: 55%
+}
+.about .about-content .right .text{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.about .about-content .right .text span{
+    color: var(--themeColor1);
+}
+.about .about-content .right p{
+    text-align: justify;
+}
+.about .about-content .right a{
+    display: inline-block;
+    background: var(--themeColor1);
+    color:white;
+    padding: 5px 20px;
+    font-size: 18px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 2px solid var(--themeColor1);
+    transition: all 0.3s ease;
+}
+.about .about-content .right a:hover{
+    color:var(--themeColor1);
+    background: none;
+}
+
+
+/* services section styling */
+.services{
+    color:white;
+    background:#222;
+}
+.services .title::before{
+    background: white;
+}
+.services .title::after{
+    background:#222;
+    content:"what i provide";
+}
+.services .serv-content .card{
+    width: calc(33% - 20px);
+    background: #444;
+    text-align: center;
+    border-radius: 8px;
+    padding: 20px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.services .serv-content .card:hover{
+    background:var(--themeColor1);
+}
+.services .serv-content .card .box{
+    transition: all 0.3s ease;
+}
+.services .serv-content .card:hover .box{
+    transform: scale(1.05);
+}
+.services .serv-content .card i{
+    font-size: 50px;
+    color: var(--themeColor1);
+    transition: color 0.3s ease;
+}
+.services .serv-content .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 8px 0;
+}
+.services .serv-content .card:hover i{
+    color:white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* media query start from here */
+@media (max-width: 1300px){
+    home .max-width{
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 1104px){
+    .about .about-content .left img{
+        height:350px;
+        width:350px;
+    }
+}
+
 @media (max-width: 991px){
     .max-width{
         padding: 0 50px;
@@ -163,6 +333,24 @@
         font-size: 23px;
         padding: 10px 30px;
     }
+    .max-width{
+        max-width: 800px;
+    }
+    .about .about-content .column{
+        width:100%;
+    }
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .about .about-content .left{
+        flex: 100%;
+    }
+    .services .serv-content .card{
+        width: calc(50% - 10px);
+        margin-bottom: 15px;
+    }
 }
 
 @media (max-width: 690px){
@@ -177,6 +365,9 @@
     }
     .home .home-content a{
         font-size: 20px;
+    }
+    .services .serv-content .card{
+        width:100%;
     }
 }
 
