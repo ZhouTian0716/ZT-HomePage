@@ -118,8 +118,16 @@
 
 /* common styling for all sections*/
 section{
-    padding: 100px 0;
+    padding: 70px 0;
     font-family: 'Roboto', sans-serif;
+}
+.about .about-content,
+.services .serv-content,
+.skills .skills-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 }
 section .title{
     position: relative;
@@ -165,13 +173,6 @@ section .title::after{
 /* about section styling */
 .about .title::after{
     content:"who i am";
-}
-.about .about-content,
-.services .serv-content{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
 }
 .about .about-content .left{
     width: 45%
@@ -257,16 +258,154 @@ section .title::after{
     color:white;
 }
 
+/* skills section styling */
+.skills .title::after{
+    content:"what i know";
+}
+.skills .skills-content .column{
+    width: calc(50% - 30px);
+}
+.skills .skills-content .left .text{
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.skills .skills-content .left p{
+    text-align: justify;
+}
+.skills .skills-content .left a{
+    display: inline-block;
+    background: var(--themeColor1);
+    color:white;
+    padding: 5px 20px;
+    font-size: 18px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 2px solid var(--themeColor1);
+    transition: all 0.3s ease;
+}
+.skills .skills-content .left a:hover{
+    color:var(--themeColor1);
+    background: none;
+}
+.skills .skills-content .right .bars{
+    margin-bottom: 15px;
+}
+.skills .skills-content .bars .info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.skills .skills-content .bars span{
+    font-size: 18px;
+    font-weight: 500;
+}
+.skills .skills-content .bars .line{
+    height: 5px;
+    width: 100%;
+    background: lightgrey;
+    position: relative;
+}
+.skills .skills-content .bars .line::before{
+    content:"";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: var(--themeColor1);
+}
+.skills .skills-content .bars .html::before{
+    width: 70%;
+}
+.skills .skills-content .bars .css::before{
+    width: 50%;
+}
+.skills .skills-content .bars .js::before{
+    width: 60%;
+}
+.skills .skills-content .bars .node::before{
+    width: 20%;
+}
+.skills .skills-content .bars .mysql::before{
+    width: 10%;
+}
 
+/* projects section styling */
+.projects{
+    color:white;
+    background:#222;
+}
+.projects .title::before{
+    background: white;
+}
+.projects .title::after{
+    background:#222;
+    content:"what to show";
+}
+.projects .box{
+    width: 340px;
+    height: 300px;
+    background: #444;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.projects .box:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 8px pink;
+}
 
+.projects .box .project-header{
+    font-size: 24px;
+    font-weight: 500;
+    padding: 10px 0;
+}
+.projects .box img{
+    height:200px;
+    width:340px;
+    margin-bottom: 10px;
+}
+.projects .box .links{
+    background: var(--themeColor1);
+    color:white;
+    margin: 0 30px;
+    padding: 3px 20px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: 2px solid var(--themeColor1);
+    transition: all 0.3s ease;
+}
+.projects .box .links:hover{
+    color:var(--themeColor1);
+    background: white;
+}
+.owl-dots{
+    text-align: center;
+    margin-top: 20px;
+}
+.owl-dot{
+    height: 13px;
+    width: 13px;
+    margin: 0 10px;
+    outline: none!important;
+    border-radius: 50%;
+    border: 2px solid var(--themeColor1)!important;
+    transition: all 0.3s ease;
+}
+.owl-dot.active{
+    width: 35px;
+    border-radius: 14px;
+}
+.owl-dot.active,
+.owl-dot:hover{
+    background: var(--themeColor1)!important;
+}
 
-
-
-
-
-
-
-
+/* contact section styling */
+.contact .title::after{
+    content:"get in touch";
+}
 
 
 
@@ -368,6 +507,12 @@ section .title::after{
     }
     .services .serv-content .card{
         width:100%;
+    }
+    .skills .skills-content .column{
+        width:100%;
+    }
+    .skills .skills-content .left{
+        margin-bottom: 30px;
     }
 }
 
