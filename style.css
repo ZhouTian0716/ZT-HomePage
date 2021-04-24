@@ -2,7 +2,9 @@
 :root{
     --themeColor1:darkslateblue;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 *{
     margin: 0;
     padding: 0;
@@ -71,6 +73,29 @@
     cursor:pointer;
     display:none;
 }
+.scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: var(--themeColor1);
+    right: 30px;
+    bottom: 30px;
+    text-align: center;
+    line-height: 45px;
+    color: white;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
 
 /* home section styling */
 .home{
@@ -118,7 +143,8 @@
 
 /* common styling for all sections*/
 section{
-    padding: 70px 0;
+    padding: 90px 0;
+    height: 100vh;
     font-family: 'Roboto', sans-serif;
 }
 .about .about-content,
@@ -297,7 +323,7 @@ section .title::after{
     justify-content: space-between;
 }
 .skills .skills-content .bars span{
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
 }
 .skills .skills-content .bars .line{
@@ -403,13 +429,100 @@ section .title::after{
 }
 
 /* contact section styling */
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
 .contact .title::after{
     content:"get in touch";
 }
+.contact .contact-content .left{
+    width: 47%
+}
+.contact .contact-content .right{
+    width: 47%
+}
+.contact .contact-content .text{
+    font-size: 24px;
+    font-weight: 500;
+    padding: 10px 0;
+}
+.contact .contact-content .left p{
+    text-align: justify;
+    margin-bottom: 20px;
+}
+.contact .contact-content .left .icons{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.contact .contact-content .left .icons .row{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.contact .contact-content .left .icons i{
+    font-size: 40px;
+    color: var(--themeColor1);
+    margin-right: 20px;
+}
+.contact .contact-content .left .icons .info{
+    font-size: 15px;
+}
+.contact .contact-content .info .myDetail{
+    color:#333;
+    font-weight: lighter;
+}
+.contact .contact-form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.contact .contact-form input,
+.contact .contact-form .messageArea{
+    font-size: 20px;
+    padding: 5px 8px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 0.5px solid grey;
+}
+.contact .contact-form .half{
+    width: 49%;
+}
+.contact .contact-form .full{
+    width: 100%;
+}
+.contact .contact-form .messageArea{
+    width: 100%;
+    resize: none;
+}
+.contact .contact-form .send-msg{
+    display: inline-block;
+    background: var(--themeColor1);
+    color:white;
+    padding: 5px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    border: 2px solid var(--themeColor1);
+    transition: all 0.3s ease;
+}
+.contact .contact-form .send-msg:hover{
+    color:var(--themeColor1);
+    background: none;
+    cursor: pointer;
+}
 
-
-
-
+/* footer styling */
+footer{
+    background-color: #222;
+    color:white;
+    text-align: center;
+    font-size: 18px;
+    padding: 25px 0;
+    font-family: 'Montserrat', sans-serif;
+}
 
 
 
@@ -489,6 +602,12 @@ section .title::after{
     .services .serv-content .card{
         width: calc(50% - 10px);
         margin-bottom: 15px;
+    }
+    .contact .contact-content .left{
+        width: 100%
+    }
+    .contact .contact-content .right{
+        width: 100%
     }
 }
 
