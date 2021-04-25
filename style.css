@@ -144,7 +144,7 @@ html{
 /* common styling for all sections*/
 section{
     padding: 90px 0;
-    height: 100vh;
+    /* height: 100vh; */
     font-family: 'Roboto', sans-serif;
 }
 .about .about-content,
@@ -559,7 +559,7 @@ footer{
         width:100%;
         left:-100%;
         top:0;
-        background:grey;
+        background:var(--themeColor1);
         text-align: center;
         padding-top:80px;
         transition: all 0.3s ease;
@@ -572,7 +572,7 @@ footer{
     }
     .navbar .menu li a{
         display:inline-block;
-        margin: 20px 0;
+        margin: 25px 0;
         font-size: 25px;
     }
     .home .home-content .text-2{
