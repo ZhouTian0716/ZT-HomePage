@@ -368,7 +368,7 @@ section .title::after{
     background:#222;
     content:"what to show";
 }
-.projects .box{
+.projects .card{
     width: 340px;
     height: 300px;
     background: #444;
@@ -377,22 +377,22 @@ section .title::after{
     cursor: pointer;
     transition: all 0.3s ease;
 }
-.projects .box:hover{
+.projects .card:hover{
     transform: scale(1.05);
     box-shadow: 0px 0px 8px pink;
 }
 
-.projects .box .project-header{
+.projects .card .project-header{
     font-size: 24px;
     font-weight: 500;
     padding: 10px 0;
 }
-.projects .box img{
+.projects .card img{
     height:200px;
     width:340px;
     margin-bottom: 10px;
 }
-.projects .box .links{
+.projects .card .links{
     background: var(--themeColor1);
     color:white;
     margin: 0 30px;
@@ -402,7 +402,7 @@ section .title::after{
     border: 2px solid var(--themeColor1);
     transition: all 0.3s ease;
 }
-.projects .box .links:hover{
+.projects .card .links:hover{
     color:var(--themeColor1);
     background: white;
 }
