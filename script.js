@@ -34,10 +34,11 @@ $(document).ready(()=>{
 
     // owl carousel script
     $('.carousel').owlCarousel({
-        loop: true,
+        loop: false,
         autoplayTimeOut: 2000,
         autoplayHoverPause: true,
         autoHeight:true,
+        responsiveClass:true,
         responsive:{
             0:{
                 items:1,
